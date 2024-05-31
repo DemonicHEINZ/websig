@@ -19,7 +19,7 @@ class Home extends BaseController
 
         // Siapkan data untuk dikirim ke view
         $data = [
-            'title' => 'Welcome',
+            'title' => 'Dashboard',
             'kabupaten' => $kabupatenData,
             'sekolah' => $sekolahData,
         ];
