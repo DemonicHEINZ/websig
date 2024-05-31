@@ -1,9 +1,5 @@
 <?= $this->extend('_Layouts/main_layout'); ?>
 
-<?= $this->section('head'); ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<?= $this->endSection(); ?>
-
 <?= $this->section('content'); ?>
 <main class="col-10 ms-sm-auto px-md-4 pt-4">
 

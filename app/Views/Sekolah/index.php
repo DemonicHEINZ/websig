@@ -7,36 +7,42 @@
     </div>
 
     <div class="mb-3">
-        <a href="<?= base_url('/kecamatan/create') ?>" class="btn btn-primary">
+        <a href="<?= base_url('/sekolah/create') ?>" class="btn btn-primary">
             <i class="fa-solid fa-plus"></i>
         </a>
     </div>
 
     <table class="table table-hover table-striped table-bordered">
         <thead class="table-primary">
-            <tr class="text-center">
+            <tr class="text-center align-middle">
                 <th>No</th>
-                <th>Kode Kecamatan</th>
                 <th>Nama Kecamatan</th>
-                <th>Jumlah Penduduk</th>
-                <th>Luas Wilayah</th>
+                <th>NPSN</th>
+                <th>Nama Sekolah</th>
+                <th>Alamat Sekolah</th>
+                <th>Status</th>
+                <th>Jenjang Pendidikan</th>
+                <th>Koordinat</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($kecamatan as $key => $data) : ?>
-                <tr class="text-center">
-                    <td><?= $key + 1 ?></td>
-                    <td><?= $data['kode_kecamatan'] ?></td>
+            <?php foreach ($sekolah as $key => $data) : ?>
+                <tr class="align-middle">
+                    <td class="text-center"><?= $key + 1 ?></td>
                     <td><?= $data['nama_kecamatan'] ?></td>
-                    <td><?= number_format(esc($data['jumlah_penduduk']), 0, ',', '.') ?></td>
-                    <td><?= number_format((float) $data['luas_wilayah'], 2, ',', '.') ?></td>
-                    <td>
+                    <td class="text-center"><?= $data['npsn'] ?></td>
+                    <td><?= $data['nama_sekolah'] ?></td>
+                    <td><?= $data['alamat_sekolah'] ?></td>
+                    <td class="text-center"><?= $data['status_sekolah'] ?></td>
+                    <td class="text-center"><?= $data['jenjang_pendidikan'] ?></td>
+                    <td class="text-center"><?= $data['koordinat'] ?></td>
+                    <td class="text-center">
                         <div class="btn-group" role="group">
-                            <a href="<?= base_url('/kecamatan/edit/' . $data['kode_kecamatan']) ?>" class="btn btn-success me-2" title="Edit">
+                            <a href="<?= base_url('/sekolah/edit/' . $data['npsn']) ?>" class="btn btn-success me-2" title="Edit">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
-                            <a href="javascript:void(0)" class="btn btn-danger" title="Delete" onclick="confirmDelete('<?= base_url('/kecamatan/delete/' . $data['kode_kecamatan']) ?>')">
+                            <a href="javascript:void(0)" class="btn btn-danger" title="Delete" onclick="confirmDelete('<?= base_url('/sekolah/delete/' . $data['npsn']) ?>')">
                                 <i class="fa-solid fa-trash-can"></i>
                             </a>
                         </div>
